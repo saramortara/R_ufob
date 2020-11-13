@@ -91,6 +91,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/liibre/logo/master/fi
 ]
 
 .pull-right[
+Dra. Andrea Sánchez-Tapia
 __Boas práticas__ em análise de dados
 (Material [aqui](https://gitlab.com/liibre/curso/-/wikis/Projetos-de-an%C3%A1lise-de-dados-usando-R))
 
@@ -217,7 +218,7 @@ Tradução um tanto livre de Gotelli & Ellison, 2004. A Primer of Ecological Sta
 
 ---
 
-## necessidade: pacote vegan & curva de acúmulo de espécies
+## motivação: pacote vegan & curva de acúmulo de espécies
 
 .pull-left[
 ```{r vegan, out.width = 500}
@@ -572,7 +573,7 @@ ma$date <- as.Date(ma$date)
 ```
 
 ```{r, eval = FALSE, echo = TRUE}
-# Script para download de dados de covid-19 no município do Rio de Janeiro
+# Script para download de dados de covid-19 no município de Macapá
 
 # Para instalar o pacote use:
 #remotes::install_github("liibre/coronabr")
@@ -738,9 +739,14 @@ Disponível em: https://r4ds.had.co.nz/
 
 
 ---
-## para fechar
+## para ter em mente
 
-- R: reprodutibilidade & responsabilidade
+
+- pensar no fluxo de trabalho
+--
+
+
+- R: reprodutibilidade e responsabilidade
 --
 
 
