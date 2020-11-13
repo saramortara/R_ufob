@@ -1,10 +1,10 @@
-# Eexplorando o IPT Flora do Brasil
+# Explorando o IPT Flora do Brasil
+## por Sara, primeira versao em nov 2020
 
 # Usar os comandos a seguir caso nao tenha os pacotes instalados:
 #remotes::install_github("liibre/Rocc")
 
 library(Rocc)
-library(dplyr)
 
 # 1. Explorando o IPT Flora do Brasil ------------------------------------------
 ipt_flora <- update_flora()
@@ -42,6 +42,7 @@ nrow(spp_aceita[spp_aceita$family == "Fabaceae", ])
 # uma genero: Rhamnaceae Ziziphus
 ziziphus <- spp_aceita[spp_aceita$genus == "Ziziphus", ]
 ziziphus
+dim(ziziphus)
 
 # 2. Relacionando tabelas diferentes -------------------------------------------
 distribution <- ipt_flora$data$distribution.txt
@@ -58,6 +59,8 @@ View(ziziphus_distr)
 
 # Especies de Ziziphus da Caatinga
 ziziphus_caa <- ziziphus_distr[grep("Caatinga", ziziphus_distr$occurrenceRemarks), ]
+
+unique(ziziphus_caa$scientificName)
 ziziphus_spp <- ziziphus_caa[!duplicated(ziziphus_caa[, c("scientificName", "occurrenceRemarks")]),
              c("scientificName", "occurrenceRemarks")]
 

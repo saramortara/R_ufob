@@ -18,6 +18,7 @@ species_check <- get.taxa(species,
 # Buscando por sinonimos
 species_syn <- get.synonyms(species)
 
+# Fazendo o download das ocorrências
 occs <- occ_search(scientificName = species,
                    limit = 1500)
 
