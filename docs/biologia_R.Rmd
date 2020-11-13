@@ -68,13 +68,6 @@ knitr::include_graphics("./figs/logo_observatorio.png")
 ```
 
 ---
-
-class: middle
-background-image: url("./figs/logo_jbrj.png")
-background-position: 98% 2%
-background-size: 100px
-
-
 ## disciplina _Projetos de análise de dados usando_ `r icon::fa("r-project")`
 
 .pull-left[
@@ -713,6 +706,13 @@ include_graphics("./figs/acumulados_AP.png")
 ```
 
 
+---
+## outros tipos de [receitas](https://familia-mortara.github.io/receitas_mortara/receitas.html) com `bookdown`
+
+```{r mortara}
+include_graphics("./figs/receitas.png")
+```
+
 
 ---
 ## recursos
@@ -726,6 +726,8 @@ include_graphics("./figs/acumulados_AP.png")
 - [Canal de Youtube R-Ladies+ BH](https://www.youtube.com/channel/UCtpGCWyRdscfs6KflWjACKw)
 
 - [Jenny Bryan. Project Oriented Workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+- [Escrevendo manuscritos acadêmicos usando R Markdown](https://www.youtube.com/watch?v=Cxrc87AH2WM)
 
 - [Page Piccinini. Curso R - R & git setup.](https://pagepiccinini.com/r-course/lesson-0-introduction-and-set-up/)
 
