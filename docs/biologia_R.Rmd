@@ -453,7 +453,7 @@ include_graphics("./figs/IPT_GBIF.png")
 
 - pacote `flora`
 
-- ROpenSci
+- [pacote `Rocc`](https://github.com/liibre/Rocc)
 
 ---
 ## `r include_graphics("./figs/Ropensci.png")`
@@ -480,9 +480,11 @@ class: middle,  center
 
 ---
 ## o quanto conhecemos da espécie?
+_Ziziphus joazeiro_ Mart.
 
-```{r, fig.align='center'}
-include_graphics("./figs/mapa_Ziziphus_joaezeiro.png")
+
+```{r, fig.align='center', out.width=700}
+include_graphics("https://raw.githubusercontent.com/saramortara/R_ufrb/master/figs/mapa_Ziziphus_joaezeiro.png")
 ```
 
 
@@ -501,7 +503,7 @@ include_graphics("./figs/mapa_Ziziphus_joaezeiro.png")
 --
 
 
-- script não é suficiente para reprodutibilidade.__ Documente__!
+- __documentação__ é essencial
 --
 
 ---

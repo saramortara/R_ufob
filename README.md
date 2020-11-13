@@ -27,12 +27,11 @@ rgbif
 sf*
 ```
 
-* pacotes utilizados para elaboração do mapa em script 04
+* pacotes utilizados para elaboração do mapa no script 04
 
-O script 00 contém uma rotina mais avançada utilizando dois pacotes não disponíveis no CRAN. Usar os comandos abaixo para instalá-los.
+O script 00 contém uma rotina mais avançada utilizando o pacote `Rocc` que está disponível apenas no GitHub. É preciso usar o comandos abaixo para instalá-lo.
 
 ```
-remotes::install_github("ropensci/taxview")
-remotes::install_github("liibre/taxview")
+remotes::install_github("liibre/rocc")
 
 ```

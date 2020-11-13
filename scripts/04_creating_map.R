@@ -38,4 +38,4 @@ juazeiro <-
 juazeiro
 
 # Exportando o mapa
-ggsave("figs/mapa_Ziziphus_joaezeiro.png", height = 4, width = 6)
+ggsave("figs/04_mapa_Ziziphus_joaezeiro.png", height = 4, width = 6)
