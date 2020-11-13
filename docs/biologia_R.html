@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R como ferramenta para projetos em Biologia</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sara Mortara" />
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R como ferramenta para projetos em Biologia
+### Sara Mortara
+### Instituto Internacional para Sustentabilidade IIS-Rio
+### 13 de novembro 2020
+
+---
+
+
+&lt;style type="text/css"&gt;
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+&lt;/style&gt;
+
+
+
+## sobre
+
+- trabalho com modelagem estatística &amp; ecologia de comunidades
+
+- **.red[¡liibre!]** laboratório independente de biodiversidade e reprodutibilidade em ecologia
+
+- pacotes [__.red[modler]__](https://model-r.github.io/modleR/]modleR) e [__.red[coronabr]__](https://liibre.github.io/coronabr/about.html)
+
+- [**.purple[@RLadiesRio]**](https://twitter.com/RLadiesRio) 
+
+- [**Observatório COVID-19 BR**](https://covid19br.github.io/)
+
+&lt;img src="https://raw.githubusercontent.com/liibre/logo/master/figures/logo_liibre.png?token=AA75IFQA34SCCZB72UL5IXK7UWDYA" width="150" /&gt;&lt;img src="https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/rainbow-inclusive.png" width="150" /&gt;&lt;img src="./figs/logo_observatorio.png" width="150" /&gt;
+
+---
+
+class: middle
+background-image: url("./figs/logo_jbrj.png")
+background-position: 98% 2%
+background-size: 100px
+
+
+## disciplina _Projetos de análise de dados usando_ <i class="fab  fa-r-project "></i>
+
+.pull-left[
+
+&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/turma.JPG" width="400" /&gt;
+
+
+&lt;img src="https://raw.githubusercontent.com/liibre/logo/master/figures/logo_liibre.png?token=AA75IFQA34SCCZB72UL5IXK7UWDYA" width="150" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+__Boas práticas__ em análise de dados
+(Material [aqui](https://gitlab.com/liibre/curso/-/wikis/Projetos-de-an%C3%A1lise-de-dados-usando-R))
+
+&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/logo-git.png" width="150" /&gt;&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/GitHub_Logo.png" width="150" /&gt;&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/btibucket.png" width="150" /&gt;&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/gitlab-logo-gray-rgb.png" width="150" /&gt;
+
+&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/latex.jpeg" width="100" /&gt;&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/bibtex.jpeg" width="100" /&gt;&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/zotero.svg" width="100" /&gt;
+&lt;img src="https://raw.githubusercontent.com/liibre/Latin-R/master/slides/./figs/rmarkdown.png" width="50" /&gt;
+
+]
+
+---
+
+## sobre hoje
+
+1. por que usar o R?
+
+2. como usar o R?
+
+3. aplicações em Biodiversidade
+
+4. outras aplicações
+
+
+---
+class: inverse, middle, center 
+
+# por que usar o R?
+
+---
+
+## R de reprodutibilidade
+
+.pull-left[
+
+- um dos pilares da __ciência aberta__
+
+
+- ferramenta baseada em script
+
+
+- permite a reconstrução dos passos
+
+
+- cultura coletiva
+
+]
+
+.pull-right[
+
+&lt;img src="./figs/The-six-core-principles-of-Open-Science-which-guide-the-Open-Traits-Network.png" width="1000" /&gt;
+
+]
+---
+
+## por que R?
+
+- projeto GNU
+&gt; think of free as in free speech, not as in free beer
+
+--
+
+- FLOSS: __free__, __libre__ &amp; __open-source__ 
+
+--
+
+- script é essencial para reprodutibilidade, mas não a garante 
+
+
+--
+
+- acessível (em comparação a outras linguagens de programação)
+
+--
+
+- muito comum na Biologia, Ciência de Dados e em diversas áreas
+
+--
+
+- __comunidade__
+
+--
+
+---
+## comunidade
+
+&lt;img src="./figs/stack_overflow.png" width="1768" style="display: block; margin: auto;" /&gt;
+
+
+---
+## ambiente para análise 
+
++ manipulação de dados
+
+--
+
++ ampla coleção de ferramentas para análise de dados e criação de gráficos
+
+--
+
++ linguagem simples e efetiva que inclui condicionais `if{}`, laços `loop{}`, funções definidas pela pessoa usuária `function()`
+
+---
+
+## construção de uma habilidade analítica
+
+&gt; Uma das coisas mais importantes que você pode fazer é dedicar um tempo para aprender uma linguagem de programação de verdade. Aprender a programar é como aprender outro idioma: exige tempo e treinamento, e não há resultados práticos imediatos. Mas se você supera essa primeira subida íngreme da curva de aprendizado, os ganhos como cientista são enormes. Programar não vai apenas livrar você da camisa de força dos pacotes estatísticos, mas também irá aguçar suas habilidades analíticas e ampliar os horizontes de modelagem ecológica e estatística.
+
+Tradução um tanto livre de Gotelli &amp; Ellison, 2004. A Primer of Ecological Statistics. Sunderland, Sinauer.
+
+---
+
+## necessidade: pacote vegan &amp; curva de acúmulo de espécies
+
+.pull-left[
+&lt;img src="./figs/vegan_bci.png" width="500" /&gt;
+]
+
+.pull-right[
+&lt;img src="./figs/bci.png" width="500" /&gt;
+]
+
+
+---
+class: inverse, middle, center 
+
+# como usar o R?
+
+---
+
+## criando um fluxo de trabalho
+
+- __um projeto__, __uma pergunta__, __uma__(s) __análise__(s)
+
+--
+
+- cada projeto uma pasta `R_ufrb_demo`
+
+--
+
+- cada pasta é __autocontida__
+
+--
+
+```
+.
+├── data/
+├── docs/
+├── figs/
+├── outputs/
+├── R_ufrb_demo.Rproj
+├── README.md
+└── scripts/
+```
+
+---
+## Caminhos relativos
+
+&lt;img src="./figs/relative_path.jpg" width="900" /&gt;
+
+
+---
+background-image: url(./figs/jenny_bryan.jpeg)
+background-size: 220px 240px
+background-position: 85% 50%
+
+## usando projetos de RStudio
+esqueça `setwd()` e conheça [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+![](./figs/jenny_bryan_wf.png)
+
+---
+## .Rproj define o wd
+
+&lt;img src="./figs/rstudio_proj.png" width="1030" /&gt;
+
+
+---
+## usando caminhos relativos nos scripts
+
+&lt;img src="./figs/caminhos_script.png" width="912" /&gt;
+
+
+
+---
+## um projeto de análise
+
+.pull-left[
+- uma boa pergunta
+
+- dados
+
+- conectando conceitos com dados
+]
+
+.pull-right[
+&lt;img src="./figs/theory.jpg" width="400" /&gt;
+
+]
+
+---
+class: middle, center
+
+# como posso entender a distribuição de uma espécie a partir de dados de coleções?
+
+---
+class: inverse, middle, center 
+
+# aplicações em biodiveRsidade
+
+---
+## dados de biodiversidade
+### museus &amp; herbários
+
+.pull-left[
+&lt;img src="./figs/mz_ictio.jpg" width="500" /&gt;
+]
+
+.pull-right[
+&lt;img src="./figs/herbarioRB.jpg" width="400" /&gt;
+]
+
+--- 
+## dados de biodiversidade
+### amostragem
+
+&lt;img src="./figs/peic.jpg" width="741" /&gt;
+
+
+## componentes dos dados de biodiversidade
+
++ espécies (informação taxonômica)
+
+--
+
++ atributos das espécies
+
+--
+
++ localidades
+
+--
+
++ ocorrências
+
+--
+
++ variáveis: altura, peso, DNA... 
+
+---
+
+## padronização de dados em biodiversidade 
+### [https://dwc.tdwg.org/](Darwin Core)
+
+facilitar o compartilhamento da informação sobre diversidade biológica
+
+&lt;img src="./figs/darwin.jpeg" width="350" style="display: block; margin: auto;" /&gt;
+
+---
+
+## padronização de dados em biodiversidade 
+### [https://dwc.tdwg.org/](Darwin Core)
+
+&lt;img src="./figs/dwc_scheme.png" width="700" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+## como funcionam as bases de dados relacionais
+
++ diferentes dados são organizados em diferentes tabelas
+
+--
+
++ tabelas são integradas
+
+--
+
++ identificador comum para cada tabela
+
+--
+
++ em geral organizadas em __SQL__ (_Structured Query Language_)
+
+---
+
+## Flora do Brasil 2020
+
+&lt;img src="./figs/flora2020.png" width="1533" /&gt;
+
+---
+## GBIF
+
+&lt;img src="./figs/GBIF.png" width="1800" /&gt;
+
+---
+## ferramenta IPT do GBIF
+
+&lt;img src="./figs/IPT_GBIF.png" width="1556" /&gt;
+
+---
+## &lt;img src="./figs/IPT.png" width="599" /&gt;
+
+
+&gt; Brazil Flora G (2020): Brazilian Flora 2020 project - Projeto Flora do Brasil 2020. v393.262. Instituto de Pesquisas Jardim Botanico do Rio de Janeiro. Dataset/Checklist. doi:10.15468/1mtkaw
+
+- 49.343 espécies
+
+- 136.314 taxa
+
+- informação sobre: distribuição, habitat, endemismo, referência ...
+
+---
+
+## acessando por meio do R
+
+- pacote `rgbif`
+
+- pacote `flora`
+
+- ROpenSci
+
+---
+## &lt;img src="./figs/Ropensci.png" width="239" /&gt;
+
+&gt; Transforming science through open data, software &amp; reproducibility
+
+
+- conjunto de pacotes para dados abertos
+
+- equipe de bioinformática muito ativa
+
+
+- bases de dados, limpeza taxonômica ... 
+
+
+- pacotes `rgbif`, `taxize`, `taxview` ...
+
+
+
+---
+class: middle,  center
+
+# <i class="fab  fa-r-project fa-3x "></i>
+
+---
+## o quanto conhecemos da espécie?
+
+&lt;img src="../figs/mapa_Ziziphus_joaezeiro.png" width="2400" style="display: block; margin: auto;" /&gt;
+
+
+---
+## boas práticas
+
+- organizar bem suas pastas
+--
+
+
+- scripts __modulares__
+--
+
+
+- não misturar dados brutos com dados processados!
+--
+
+
+- script não é suficiente para reprodutibilidade.__ Documente__!
+--
+
+---
+## task views - Environmentrics
+
+&lt;img src="./figs/task_view_env.png" width="1777" /&gt;
+
+
+---
+## task views - Phylogenetics
+
+&lt;img src="./figs/task_view_phy.png" width="1780" /&gt;
+
+
+---
+class: inverse, middle, center
+
+# outRas aplicações
+
+---
+
+
+--- 
+## pacote coronabr
+
+
+&lt;img src="./figs/coronabr.png" width="1571" /&gt;
+
+
+---
+## dados, responsabilidade &amp; contexto
+
+
+- dados deveriam ser abertos e acessíveis
+  
+  [Trânsparência COVID-19 OPEN KNOWLEDGE BRASIL](https://transparenciacovid19.ok.org.br)
+  
+  
+- nem toda análise que **pode** ser feita, **deve** ser feita 
+
+
+- cada dado diz respeito a uma pessoa
+
+
+- para COVID-19 e SRAG: **subnotificação** &amp; **atraso**
+
+
+- inconsistência com dados reportados em diferentes escalas: município, estado, país
+
+---
+## Macapá-AM
+
+
+
+
+
+
+```r
+# Script para download de dados de covid-19 no município do Rio de Janeiro
+
+# Para instalar o pacote use:
+#remotes::install_github("liibre/coronabr")
+
+# 1. bibliotecas ####
+library(coronabr)
+library(ggplot2)
+
+# 2. download ####
+## dados macapa-ap usando o geocode IBGE
+ma &lt;- get_corona_br(filename = "macapa",
+                    dir = "data/",
+                    ibge_cod = "1600303")
+```
+
+---
+## entendendo os dados
+
+.tiny[
+
+```r
+# 3. inspeção dos dados ####
+head(ma[, c(3, 4, 9:18)])
+```
+
+```
+##         date epidemiological_week last_available_confirmed
+## 1 2020-03-20                   12                        1
+## 2 2020-03-21                   12                        1
+## 3 2020-03-22                   13                        1
+## 4 2020-03-23                   13                        1
+## 5 2020-03-24                   13                        1
+## 6 2020-03-25                   13                        2
+##   last_available_confirmed_per_100k_inhabitants last_available_date
+## 1                                       0.19497          2020-03-20
+## 2                                       0.19497          2020-03-21
+## 3                                       0.19497          2020-03-22
+## 4                                       0.19497          2020-03-23
+## 5                                       0.19497          2020-03-24
+## 6                                       0.38994          2020-03-25
+##   last_available_death_rate last_available_deaths order_for_place place_type
+## 1                         0                     0               1       city
+## 2                         0                     0               2       city
+## 3                         0                     0               3       city
+## 4                         0                     0               4       city
+## 5                         0                     0               5       city
+## 6                         0                     0               6       city
+##   state new_confirmed new_deaths
+## 1    AP             1          0
+## 2    AP             0          0
+## 3    AP             0          0
+## 4    AP             0          0
+## 5    AP             0          0
+## 6    AP             1          0
+```
+]
+
+---
+## entendendo os dados
+
+.tiny[
+
+```r
+tail(ma[, c(3, 4, 9:18)])
+```
+
+```
+##           date epidemiological_week last_available_confirmed
+## 233 2020-11-07                   45                    20375
+## 234 2020-11-08                   46                    20375
+## 235 2020-11-09                   46                    20375
+## 236 2020-11-10                   46                    20375
+## 237 2020-11-11                   46                    20375
+## 238 2020-11-12                   46                    20375
+##     last_available_confirmed_per_100k_inhabitants last_available_date
+## 233                                      3972.494          2020-11-02
+## 234                                      3972.494          2020-11-02
+## 235                                      3972.494          2020-11-02
+## 236                                      3972.494          2020-11-02
+## 237                                      3972.494          2020-11-02
+## 238                                      3972.494          2020-11-02
+##     last_available_death_rate last_available_deaths order_for_place place_type
+## 233                    0.0255                   520             233       city
+## 234                    0.0255                   520             234       city
+## 235                    0.0255                   520             235       city
+## 236                    0.0255                   520             236       city
+## 237                    0.0255                   520             237       city
+## 238                    0.0255                   520             238       city
+##     state new_confirmed new_deaths
+## 233    AP             0          0
+## 234    AP             0          0
+## 235    AP             0          0
+## 236    AP             0          0
+## 237    AP             0          0
+## 238    AP             0          0
+```
+]
+
+---
+## criando um gráfico com [ggplot2](https://ggplot2.tidyverse.org)
+
+
+```r
+# 4. Fazendo um gráfico simples ####
+ggplot(ma, aes(x = date, 
+               y = last_available_confirmed_per_100k_inhabitants)) +
+  geom_line(color = "red",
+            alpha = .5) +
+  geom_point(color = "red") +
+  scale_x_date(date_labels = "%d/%b") +
+  labs(x = "Data",
+       y = "Casos (por 100 mil habitantes)",
+       caption = paste0("Fonte: Brasil.io"),
+       title = "Casos de COVID-19 em Macapá-AM") +
+  theme_minimal()
+```
+
+---
+## nosso gráfico
+
+
+&lt;img src="biologia_R_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+## apagão
+
+&lt;img src="./figs/AP_design_ativista.png" width="400" style="display: block; margin: auto;" /&gt;
+
+<i class="fab  fa-instagram "></i> @designativista
+
+
+---
+## casos não reportados
+
+
+&lt;img src="./figs/alcinea.png" width="600" style="display: block; margin: auto;" /&gt;
+
+<i class="fab  fa-twitter "></i> @alcinea
+
+---
+## ressalvas em relação aos dados brutos
+
+0.  __apagão__
+--
+
+
+1. __subnotificação__
+--
+
+
+2. __atraso__ na entrada dos dados no sistema - tanto para casos como óbitos
+--
+
+---
+## como vemos o atraso
+
+&lt;img src="https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/fig/gif_BE_05_junho.gif" width="500" style="display: block; margin: auto;" /&gt;
+
+---
+## Observatório Covid-19BR
+
+&lt;img src="./figs/observatorio.png" width="1779" style="display: block; margin: auto;" /&gt;
+
+
+---
+## correção por nowcasting 
+
+&lt;img src="./figs/diarios_AP.png" width="700" style="display: block; margin: auto;" /&gt;
+
+
+---
+## comparação entre notificados e estimados 
+
+&lt;img src="./figs/acumulados_AP.png" width="700" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+## recursos
+
+- [Projetos de análise de dados usando R](https://gitlab.com/liibre/curso/-/wikis/Projetos-de-an%C3%A1lise-de-dados-usando-R)
+
+- [Data cleaning tools. ENM Course 2020](https://www.youtube.com/watch?v=266Q56M-48w&amp;t=2424s )
+
+- [Canal de Youtube R-Ladies+ Rio](https://www.youtube.com/channel/UCGwTYiK7vTePhPpDRgQAq_A)
+
+- [Canal de Youtube R-Ladies+ BH](https://www.youtube.com/channel/UCtpGCWyRdscfs6KflWjACKw)
+
+- [Jenny Bryan. Project Oriented Workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+- [Page Piccinini. Curso R - R &amp; git setup.](https://pagepiccinini.com/r-course/lesson-0-introduction-and-set-up/)
+
+---
+## recursos
+
+&lt;img src="./figs/r_data_science.jpg" width="300" style="display: block; margin: auto;" /&gt;
+Disponível em: https://r4ds.had.co.nz/
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
