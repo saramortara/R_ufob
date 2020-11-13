@@ -2,7 +2,6 @@
 
 # Usar os comandos a seguir caso nao tenha os pacotes instalados:
 #remotes::install_github("liibre/Rocc")
-# install.packages("wesanderson")
 
 library(Rocc)
 library(dplyr)
