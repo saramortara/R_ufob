@@ -5,7 +5,7 @@
 *.html
 
 # specific folders
-data/caatinga_border/
-data/GADM/
+#data/caatinga_border/
+#data/GADM/
 docs/biologia_R_files/
 docs/libs/

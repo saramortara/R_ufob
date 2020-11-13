@@ -259,7 +259,7 @@ class: inverse, middle, center
 ├── docs/
 ├── figs/
 ├── outputs/
-├── R_ufrb_demo.Rproj
+├── R_ufrb.Rproj
 ├── README.md
 └── scripts/
 ```
@@ -455,6 +455,8 @@ include_graphics("./figs/IPT_GBIF.png")
 
 - [pacote `Rocc`](https://github.com/liibre/Rocc)
 
+
+
 ---
 ## `r include_graphics("./figs/Ropensci.png")`
 
@@ -484,7 +486,7 @@ _Ziziphus joazeiro_ Mart.
 
 
 ```{r, fig.align='center', out.width=700}
-include_graphics("https://raw.githubusercontent.com/saramortara/R_ufrb/master/figs/mapa_Ziziphus_joaezeiro.png")
+include_graphics("https://raw.githubusercontent.com/saramortara/R_ufrb/master/figs/04_mapa_Ziziphus_joaezeiro.png")
 ```
 
 
@@ -735,3 +737,40 @@ include_graphics("./figs/r_data_science.jpg")
 Disponível em: https://r4ds.had.co.nz/
 
 
+---
+## para fechar
+
+- R: reprodutibilidade & responsabilidade
+--
+
+
+- os dados não falam por si só
+--
+
+
+- entender o contexto é essencial para fazer uma boa análise
+--
+
+
+- manter-se libre!
+
+
+```{r, out.width= 150, fig.align = "center"}
+include_graphics("https://raw.githubusercontent.com/liibre/logo/master/figures/logo_liibre.png?token=AA75IFQA34SCCZB72UL5IXK7UWDYA")
+```
+
+
+---
+
+## obrigada!
+
+
+<center>
+`r icon::fa("paper-plane")` [saramortara@gmail.com](mailto:saramortara@gmail.com) 
+
+`r icon::fa("twitter")` [@MortaraSara](https://twitter.com/MortaraSara) 
+
+`r icon::fa("github")` `r icon::fa("gitlab")` [¡liibre!](http://github.com/liibre)  
+
+`r icon::fa("github")`
+[saramortara](http://github.com/saramortara)  

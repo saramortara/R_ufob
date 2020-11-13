@@ -7,7 +7,7 @@ Esta é uma estrutura básica de um projeto.
     ├── docs            # apresentacao
     ├── figs            # figuras geradas pelos codigos
     ├── outputs         # outputs gerados pelos codigos
-    ├── R_ufrb_demo.Rproj   
+    ├── R_ufrb.Rproj   
     ├── README.md       # explicação sobre o projeto
     └── scripts         # codigo
 
